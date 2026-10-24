@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This code defines the Cart interface where users can view and confirm selected projects. -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- This code applies external CSS styling to the cart layout. -->
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      stylesheets="@style.css"
+      spacing="10" alignment="CENTER"
+      prefWidth="450" prefHeight="400">
+
+    <!-- This code defines the main container for the cart layout and alignment. -->
+    <children>
+        <!-- This code displays the cart title header. -->
+        <Label text="🛒 My Cart" style="-fx-font-size: 18; -fx-font-weight: bold;" />
+
+        <!-- This code displays all projects added to the user’s cart. -->
+        <TableView fx:id="cartTable" prefWidth="400" prefHeight="250">
+            <columns>
+                <!-- This code defines how the project title attribute is displayed. -->
+                <TableColumn fx:id="titleColumn" text="Title" prefWidth="150" />
+                <!-- This code defines how the project location attribute is displayed. -->
+                <TableColumn fx:id="locationColumn" text="Location" prefWidth="100" />
+                <!-- This code defines how the project day attribute is displayed. -->
+                <TableColumn fx:id="dayColumn" text="Day" prefWidth="80" />
+                <!-- This code defines how the project hourly value attribute is displayed. -->
+                <TableColumn fx:id="hourlyValueColumn" text="Hourly Value" prefWidth="100" />
+                <!-- This code defines how the project hours attribute is displayed. -->
+                <TableColumn fx:id="hoursColumn" text="Hours" prefWidth="80" />
+            </columns>
+        </TableView>
+
+        <!-- This code groups the action buttons for confirming registration and returning to the dashboard. -->
+        <HBox alignment="CENTER" spacing="15">
+            <children>
+                <Button fx:id="confirmButton" text="Confirm Registration" prefWidth="180"/>
+                <Button fx:id="backButton" text="Back to Dashboard" prefWidth="180"/>
+            </children>
+        </HBox>
+
+        <!-- This code shows system or confirmation messages. -->
+        <Label fx:id="statusLabel" textFill="green" />
+    </children>
+
+    <!-- This code adds consistent spacing around the cart layout. -->
+    <padding>
+        <Insets top="15" bottom="15" left="15" right="15"/>
+    </padding>
+</VBox>
